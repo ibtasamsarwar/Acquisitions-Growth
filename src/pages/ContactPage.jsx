@@ -28,7 +28,7 @@ export default function ContactPage() {
                 <span style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", color: "#888" }}>Scale Your Vision</span>
               </div>
               <h1 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(4rem,10vw,10rem)", lineHeight: 0.87, letterSpacing: "-2px", textTransform: "uppercase", marginBottom: "1.5rem" }}>LET&apos;S<br />TALK<br /><span style={{ WebkitTextStroke: "3px #1a1a1a", color: "transparent" }}>GROWTH.</span></h1>
-              <p style={{ fontSize: "1.05rem", color: "#555", lineHeight: 1.7, maxWidth: 400, marginBottom: "2.5rem" }}>Ready to accelerate your acquisition strategy? Our experts are standing by to engineer your next phase of expansion.</p>
+              <p style={{ fontSize: "1.05rem", color: "#555", lineHeight: 1.7, maxWidth: 400, marginBottom: "2.5rem" }}>Ready to grow your business? Our team is here to help you get more leads and customers.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
                 {[{ icon: "call", value: "+1 (555) GROWTH-AG" }, { icon: "mail", value: "hello@acquisitionsgrowth.com" }, { icon: "schedule", value: "Response within 24 hours" }].map((item) => (
                   <div className="info-row" key={item.icon}>

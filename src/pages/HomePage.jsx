@@ -67,6 +67,14 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileMenuOpen(false);
@@ -87,8 +95,8 @@ export default function HomePage() {
           </div>
           <button className="mob-btn" onClick={() => setMobileMenuOpen((current) => !current)} style={{ background: "none", border: "none", fontSize: 28, cursor: "pointer" }}>{mobileMenuOpen ? "✕" : "☰"}</button>
         </div>
-        {mobileMenuOpen ? <div style={{ position: "fixed", inset: 0, background: "#f5f4f0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2.5rem", zIndex: 999 }}><button style={{ position: "absolute", top: "1.5rem", right: "2rem", background: "none", border: "none", fontSize: 28, cursor: "pointer" }} onClick={() => setMobileMenuOpen(false)}>✕</button><button style={{ background: "none", border: "none", fontFamily: "'Anton', sans-serif", fontSize: "2.5rem", letterSpacing: "3px", cursor: "pointer" }} onClick={() => scrollTo("case-studies")}>RESULTS</button><Link to="/contact" style={{ background: "#1a1a1a", color: "#fff", padding: "1rem 2rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }} onClick={() => setMobileMenuOpen(false)}>Work With Us</Link></div> : null}
       </nav>
+      {mobileMenuOpen ? <div style={{ position: "fixed", inset: 0, background: "#f5f4f0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2.5rem", zIndex: 999, padding: "2rem" }}><button style={{ position: "absolute", top: "1.5rem", right: "2rem", background: "none", border: "none", fontSize: 28, cursor: "pointer" }} onClick={() => setMobileMenuOpen(false)}>✕</button><button style={{ background: "none", border: "none", fontFamily: "'Anton', sans-serif", fontSize: "2.5rem", letterSpacing: "3px", cursor: "pointer" }} onClick={() => scrollTo("case-studies")}>RESULTS</button><Link to="/contact" style={{ background: "#1a1a1a", color: "#fff", padding: "1rem 2rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }} onClick={() => setMobileMenuOpen(false)}>Work With Us</Link></div> : null}
 
       <section className="hero-wrap" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", paddingBottom: "4rem", paddingTop: "6.5rem", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: "0", left: "-2%", fontFamily: "'Anton', sans-serif", fontSize: "clamp(18rem,38vw,52rem)", color: "rgba(0,0,0,0.045)", lineHeight: .88, pointerEvents: "none", letterSpacing: "-4px" }}>GROW</div>

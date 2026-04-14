@@ -15,6 +15,14 @@ export default function CaseStudyGBP() {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
@@ -33,8 +41,8 @@ export default function CaseStudyGBP() {
           </div>
           <button className="mob-btn" onClick={() => setMobileMenuOpen((current) => !current)} style={{ background: "none", border: "none", fontSize: 28, cursor: "pointer" }}>{mobileMenuOpen ? "✕" : "☰"}</button>
         </div>
-        {mobileMenuOpen ? <div style={{ position: "fixed", inset: 0, background: "#f5f4f0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2.5rem", zIndex: 999 }}><button style={{ position: "absolute", top: "1.5rem", right: "2rem", background: "none", border: "none", fontSize: 28, cursor: "pointer" }} onClick={() => setMobileMenuOpen(false)}>✕</button><Link to="/" style={{ background: "none", border: "none", fontFamily: "'Anton', sans-serif", fontSize: "2.5rem", letterSpacing: "3px", textDecoration: "none", color: "#1a1a1a" }} onClick={() => setMobileMenuOpen(false)}>HOME</Link><Link to="/contact" style={{ background: "#1a1a1a", color: "#fff", padding: "1rem 2rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }} onClick={() => setMobileMenuOpen(false)}>Work With Us</Link></div> : null}
       </nav>
+      {mobileMenuOpen ? <div style={{ position: "fixed", inset: 0, background: "#f5f4f0", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2.5rem", zIndex: 999, padding: "2rem" }}><button style={{ position: "absolute", top: "1.5rem", right: "2rem", background: "none", border: "none", fontSize: 28, cursor: "pointer" }} onClick={() => setMobileMenuOpen(false)}>✕</button><Link to="/" style={{ background: "none", border: "none", fontFamily: "'Anton', sans-serif", fontSize: "2.5rem", letterSpacing: "3px", textDecoration: "none", color: "#1a1a1a" }} onClick={() => setMobileMenuOpen(false)}>HOME</Link><Link to="/contact" style={{ background: "#1a1a1a", color: "#fff", padding: "1rem 2rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }} onClick={() => setMobileMenuOpen(false)}>Work With Us</Link></div> : null}
 
       {/* Hero Section */}
       <section style={{ paddingTop: "10rem", paddingBottom: "4rem", background: "#fff", borderBottom: "1.5px solid #e8e8e4" }}>

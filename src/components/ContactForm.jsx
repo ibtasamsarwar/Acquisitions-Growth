@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getMissingContactEmailConfig, sendContactEmail } from "../lib/contactEmail";
 
 const options = [
   "SEO & Content",
@@ -27,6 +28,8 @@ const inputStyle = {
 export default function ContactForm({ submitLabel = "Submit Inquiry" }) {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", services: [] });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const toggleService = (service) => {
     setFormData((current) => ({
@@ -35,6 +38,28 @@ export default function ContactForm({ submitLabel = "Submit Inquiry" }) {
         ? current.services.filter((item) => item !== service)
         : [...current.services, service]
     }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setErrorMessage("");
+
+    const missingConfig = getMissingContactEmailConfig();
+
+    if (missingConfig.length > 0) {
+      setErrorMessage("Contact email is not configured yet. Add the recipient email to your env file to enable submissions.");
+      return;
+    }
+
+    try {
+      setSubmitting(true);
+      await sendContactEmail(formData);
+      setSubmitted(true);
+    } catch (error) {
+      setErrorMessage("We could not send your inquiry right now. Please try again in a moment.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -50,7 +75,7 @@ export default function ContactForm({ submitLabel = "Submit Inquiry" }) {
   }
 
   return (
-    <form onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
       <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <label style={labelStyle}>
           <span style={labelTextStyle}>Full Name</span>
@@ -93,8 +118,13 @@ export default function ContactForm({ submitLabel = "Submit Inquiry" }) {
           ))}
         </div>
       </div>
-      <button type="submit" style={{ marginTop: "0.5rem", padding: "1.1rem 2rem", background: "#1a1a1a", color: "#fff", borderRadius: 3, fontFamily: "'Anton', sans-serif", fontSize: "1.1rem", letterSpacing: "2px", textTransform: "uppercase", cursor: "pointer" }}>
-        {submitLabel}
+      {errorMessage ? (
+        <p style={{ color: "#b42318", fontSize: "0.9rem", lineHeight: 1.6 }}>
+          {errorMessage}
+        </p>
+      ) : null}
+      <button type="submit" disabled={submitting} style={{ marginTop: "0.5rem", padding: "1.1rem 2rem", background: "#1a1a1a", color: "#fff", borderRadius: 3, fontFamily: "'Anton', sans-serif", fontSize: "1.1rem", letterSpacing: "2px", textTransform: "uppercase", cursor: submitting ? "wait" : "pointer", opacity: submitting ? 0.75 : 1, border: "none" }}>
+        {submitting ? "Sending..." : submitLabel}
       </button>
     </form>
   );

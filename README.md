@@ -20,6 +20,24 @@ npm install
 npm run dev
 ```
 
+## Contact Form Email Setup
+
+The contact form sends submissions through FormSubmit.
+
+1. Copy `.env.example` to `.env` if needed.
+2. Set `VITE_CONTACT_RECIPIENT_EMAIL` to the inbox that should receive new inquiries.
+3. Restart the dev server after changing env values.
+4. Submit the form once and confirm the activation email FormSubmit sends to that inbox.
+
+The current setup sends:
+
+- Name
+- Email
+- Phone
+- Selected services
+
+The email subject is set automatically from the sender name, and the message uses FormSubmit's table template.
+
 ## Build
 
 ```bash

@@ -85,7 +85,7 @@ export default function CaseStudyGBP() {
           <div style={{ marginBottom: "4rem" }}>
             <h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "2.5rem", letterSpacing: "-0.5px", textTransform: "uppercase", marginBottom: "1.5rem" }}>The Challenge</h2>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#444", marginBottom: "1.25rem" }}>
-              The business had a Google Business Profile, but it was not getting good results. There were very few calls, low website traffic, and almost no engagement from customers. The profile was also not fully optimized and was missing important updates.
+              The business had a Google Business Profile, but lacked engagement. There were very few calls, low website traffic, and almost no engagement from customers. The profile was also not fully optimized and was missing important updates.
             </p>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#444", marginBottom: "1.5rem" }}>
               Our goals were simple:
@@ -173,7 +173,7 @@ export default function CaseStudyGBP() {
               <img src={googleSearchConsoleImage} alt="Google Search Console performance snapshot" style={{ width: "100%", borderRadius: 4, border: "1.5px solid #e8e8e4" }} />
               <p style={{ fontSize: "0.85rem", color: "#888", marginTop: "0.75rem", textAlign: "center", fontStyle: "italic" }}>Google Search Console data highlighting improved search visibility</p>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#444", marginTop: "1.5rem" }}>
-                This means more people started seeing and clicking on the business online.
+                This means more customers started seeing and clicking on the business online.
               </p>
             </div>
 

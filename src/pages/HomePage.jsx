@@ -40,11 +40,11 @@ const services = [
 const faqs = [
   [
     "How fast can I see results?",
-    "Most businesses start seeing more calls, traffic, and engagement within 30 days. SEO results take longer and usually grow over 2–3 months."
+    "Most businesses start seeing more calls, traffic, and engagement within 30 days. SEO results vary and generally grow over 2–3 months."
   ],
   [
     "Do you work with small businesses or startups?",
-    "Yes. We work with both small businesses and growing companies. If you're serious about getting more leads, we can help."
+    "We work with both small businesses and growing businesses. If you're ready to generate leads, we are here to assist."
   ],
   [
     "How much does it cost?",
@@ -136,7 +136,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
             <div><div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: "0.72rem", letterSpacing: "4px", color: "#aaa", textTransform: "uppercase", marginBottom: "0.75rem" }}>Case Studies</div><h2 style={{ fontFamily: "'Anton', sans-serif", fontSize: "clamp(2.5rem,6vw,5rem)", letterSpacing: "-1px", textTransform: "uppercase", lineHeight: 0.9 }}>REAL<br />RESULTS</h2></div>
-            <Link className="ctaout" to="/contact">Start Your Story</Link>
+            <Link className="ctaout" to="/contact">Case Study</Link>
           </div>
           
           <article className="case-card" style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -151,7 +151,7 @@ export default function HomePage() {
               <div style={{ fontFamily: "'Anton', sans-serif", fontSize: "4.5rem", lineHeight: 1, marginBottom: "0.5rem", color: "#1a1a1a" }}>+68%</div>
               <h3 style={{ fontFamily: "'Anton', sans-serif", fontSize: "1.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "1rem", lineHeight: 1.2 }}>Traffic Growth from Google Business Profile</h3>
               <p style={{ color: "#555", fontSize: "1rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-                With simple daily updates, we increased traffic by 68% in 30 days, along with 80% more website visits and 50% more calls.
+                With simple daily updates, we increased traffic by 68% in 30 days, along with 80% more website visits and 50% more calls on average.
               </p>
               <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "2rem" }}>
                 {["Google Business Profile", "Local SEO", "Lead Generation"].map((tag) => <span key={tag} style={{ border: "1.5px solid #e8e8e4", padding: "0.4rem 0.85rem", fontSize: "0.72rem", letterSpacing: "2px", textTransform: "uppercase", color: "#777", borderRadius: 2 }}>{tag}</span>)}

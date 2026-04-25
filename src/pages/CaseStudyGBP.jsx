@@ -29,12 +29,15 @@ export default function CaseStudyGBP() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body,#root{background:#f5f4f0;color:#1a1a1a;font-family:'Barlow',sans-serif;line-height:1.6;overflow-x:hidden}.navbtn{background:none;border:none;color:#1a1a1a;font-family:'Barlow',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none}.ctabtn,.ctaout{display:inline-flex;align-items:center;gap:6px;padding:.75rem 1.75rem;border-radius:2px;font-family:'Anton',sans-serif;font-size:.95rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer}.ctabtn{background:#1a1a1a;color:#fff}.ctaout{background:transparent;color:#1a1a1a;border:2px solid #1a1a1a}@media (max-width:900px){.desk-nav{display:none!important}.nav-logo{height:58px!important}}@media (max-width:600px){.nav-logo{height:48px!important}}@media (min-width:901px){.mob-btn{display:none!important}}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body,#root{background:#f5f4f0;color:#1a1a1a;font-family:'Barlow',sans-serif;line-height:1.6;overflow-x:hidden}.navbtn{background:none;border:none;color:#1a1a1a;font-family:'Barlow',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none}.ctabtn,.ctaout{display:inline-flex;align-items:center;gap:6px;padding:.75rem 1.75rem;border-radius:2px;font-family:'Anton',sans-serif;font-size:.95rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;cursor:pointer}.ctabtn{background:#1a1a1a;color:#fff}.ctaout{background:transparent;color:#1a1a1a;border:2px solid #1a1a1a}@media (max-width:900px){.desk-nav{display:none!important}.nav-logo{height:46px!important}}@media (max-width:600px){.nav-logo{height:38px!important}}@media (min-width:901px){.mob-btn{display:none!important}}`}</style>
 
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 200, background: scrollY > 60 ? "rgba(245,244,240,.97)" : "transparent", borderBottom: scrollY > 60 ? "1.5px solid #e8e8e4" : "1.5px solid transparent", backdropFilter: scrollY > 60 ? "blur(16px)" : "none", transition: "all .3s", padding: "1rem 0" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <Link to="/" style={{ display: "inline-flex", alignItems: "center" }}>
-            <img className="nav-logo" src={siteLogo} alt="Acquisitions Growth" style={{ height: 72, width: "auto", display: "block" }} />
+          <Link to="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", textDecoration: "none" }}>
+            <img className="nav-logo" src={siteLogo} alt="Acquisitions Growth" style={{ height: 56, width: "auto", display: "block" }} />
+            <span style={{ fontFamily: "'Anton', sans-serif", fontSize: "1.35rem", letterSpacing: "0.8px", color: "#1a1a1a", textTransform: "uppercase", lineHeight: 1 }}>
+              Acquisitions Growth
+            </span>
           </Link>
           <div className="desk-nav" style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
             <Link className="navbtn" to="/">Home</Link>
@@ -237,7 +240,7 @@ export default function CaseStudyGBP() {
                 </div>
               </div>
               <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#444", marginTop: "1.5rem" }}>
-                More people started finding the business through Google.
+                More customers started finding the business through Google.
               </p>
             </div>
           </div>
